@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antunes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onresize="verificaLargura()">
+    <header id="topo">
+        <span class="btn-menu-mobile" id="btn-menu-mobile" onclick="abreMenuMobile()">&#9776;</span>
+        <img class="logo-header" alt="logo" src="assets/capa1image.jpg">
+        <nav class="container-menu" id="container-menu">
+            <ul>
+                <li onclick="escondeMenuMobile()"><a href="#">home</a></li>
+                <li onclick="escondeMenuMobile()"><a href="#empresa">empresa</a></li>
+                <li onclick="escondeMenuMobile()"><a href="#clientes">clientes</a></li>
+                <li onclick="escondeMenuMobile()"><a href="#box-de-vendas">box de vendas</a></li>
+                <li onclick="escondeMenuMobile()"><a href="#contatos">contato</a></li>
+            </ul>
+        </nav> 
+    </header>    
+    <main class="conteudo-principal">
+        <section class="secao" id="empresa">  
+            <h1 class="titulo-secao">Empresa</h1>
+            <div class="conteudo-secao">
+                <p>A Granja Antunes é uma empresa natural de Taquarituba, SP, 
+                onde teve sua história marcada pelo trabalho realizado no 
+                ramo de transporte, beneficiamento e armazenamento de cereais, 
+                suinocultura e lavoura (agricultura) Em 2006, o grupo Antunes 
+                opta por ampliar o ramo de atuação, adquirindo uma nova empresa. 
+                Empresa esta que atua no setor de postura comercial, ou seja, 
+                produção de ovos. As novas unidades Granja Antunes, estão 
+                localizadas no município de Avaré, interior de São Paulo 
+                onde são produzidos diariamente cerca de 2.000 caixas de 
+                ovos com a marca Antunes, produtos estes distribuídos para 
+                atacadistas e varejistas de todo o Brasil.</p>
+                <img alt="Empresa" src="assets/img4.jpg">
+            </div>
+        </section>
+        
+        <section class="secao" id="clientes">  
+            <h1 class="titulo-secao">Clientes</h1>
+            <div class="conteudo-secao" id="conteudo-clientes">
+                <img class="img-clientes" alt="Carrefour" src="assets/carrefour.jpg">
+                <img class="img-clientes" alt="Atacadão" src="assets/atacadao.jpg">
+                <img class="img-clientes" alt="Fama" src="assets/fama.jpg">
+                <img class="img-clientes" alt="Pão de Açucar" src="assets/pao-de-acucar.jpg">
+            </div>
+        </section>
+        <section class="secao" id="box-de-vendas">  
+            <h1 class="titulo-secao">Box de Vendas</h1>
+            <div class="conteudo-secao">
+                <p>Ao transitar pela rodovia João Melão, nas proximidades do km 241, 
+                faça uma visita ao box de vendas Antunes, onde são comercializados 
+                bebidas, doces e principalmente os produtos de produção própria, 
+                que são os ovos. Os ovos comercializados no estabelecimento, são 
+                ovos com alto nível de frescor e isento de qualquer avaria 
+                decorrente de armazenamento e transporte, chegando à mesa do 
+                consumidor com mais alto nível de qualidade.</p>
+                <img alt="Box de vendas" src="assets/box-de-vendas.jpg">
+            </div>
+        </section>
+        <section class="secao" id="contatos">  
+            <h1 class="titulo-secao">Contatos</h1>
+            <div class="conteudo-secao">
+                <div class="container-form-contato">
+                    <h1>Entre em Contato</h1> 
+                     <form action="">
+                         <label for="texto-nome">Seu nome:</label>
+                         <input type="text" name="texto-nome" id="">
+                         <label for="texto-email">Seu melhor email:</label>
+                         <input type="email" name="texto-email" id="">
+                         <label for="texto-mensagem">Sua mensagem de texto:</label>
+                         <textarea name="texto-mensagem" id="" cols="30" rows="10"
+                         placeholder=""
+                         ></textarea>
+                         <button type="button">Enviar</button>
+                     </form>
+                 </div>
+                 <div class="container-social-media">
+                     <div class="conteudo-social-media">
+                         <h1>Contatos Úteis</h1>
+                         <div class="icones-redes-sociais">
+                            <h2>(14) 3731-7283</h2>
+                            <h2>(14) 3731-7285</h2>
+                            <h2>(14) 3731-7134</h2>
+                            <h2>(14) 9 9603-0429</h2>
+                         </div>
+                     </div>
+                 </div> 
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="texto-direitos">© - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
