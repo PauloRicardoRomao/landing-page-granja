@@ -4,7 +4,7 @@ function abreMenuMobile(){
     const linksMenu = menuMobile.querySelectorAll('ul li a');
 
     menuMobile.style.display = 'flex';
-    tela.style.overflow = 'visible';
+    tela.style.overflow = 'hidden';
     linksMenu.forEach(link => {
         if (link.textContent.length >= 13) {
             link.style.lineHeight = '1.0em';
@@ -15,8 +15,8 @@ function abreMenuMobile(){
 function escondeMenuMobile(){
     const menuMobile = document.getElementById('container-menu');
     const tela = document.getElementById('container');
-
     if (window.innerWidth <= 1024) {
+        tela.style.overflow = 'auto';
         menuMobile.style.display = 'none';
     }
 }
