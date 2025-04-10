@@ -115,3 +115,64 @@ const observarContatos = new IntersectionObserver((entradas) => {
 if (contatos) {
     observarContatos.observe(contatos);
 }
+
+
+
+/*js banner carrossel*/
+
+
+const carrossel = document.querySelector('.container-carrossel');
+const botaoAnterior = document.querySelector('.slide-prev');
+const botaoProximo = document.querySelector('.slide-next');
+const slides = document.querySelectorAll('.conteudo-carrossel');
+let indiceAtual = 0;
+let larguraSlide = slides[0]?.offsetWidth || 0; // Adicionado um fallback para o caso de slides ser vazio
+
+function irParaSlide(indice) {
+    
+    carrossel.style.transform = `translateX(-${indice * larguraSlide}px)`;
+    indiceAtual = indice;
+
+}
+
+function proximoSlide() {
+    console.log(indiceAtual, slides.length - 1);
+    if(indiceAtual < slides.length){
+        irParaSlide(indiceAtual+1);
+        atualizarBotoes();
+        console.log(indiceAtual, slides.length -1);
+    }
+}
+
+function slideAnterior() {
+    console.log(indiceAtual, slides.length - 1);
+    if(indiceAtual < slides.length){
+        irParaSlide(indiceAtual-1);
+        atualizarBotoes();
+        console.log(indiceAtual, slides.length -1);
+    }
+}
+
+function atualizarBotoes() {
+    if (botaoAnterior) {
+        botaoAnterior.disabled = indiceAtual === 0;
+    }
+
+    if(botaoProximo){
+        botaoProximo.disabled = indiceAtual === slides.length - 1;
+    }
+}
+
+window.addEventListener('load', () => {
+    // Recalcula a largura do slide após a página carregar para garantir precisão
+    if (slides.length > 0) {
+        larguraSlide = slides[0].offsetWidth;
+        irParaSlide(indiceAtual); // Garante que o primeiro slide esteja na posição correta
+        atualizarBotoes(); // Garante que os botões estejam no estado inicial correto
+    }
+});
+
+// Chama a função inicialmente para definir o estado dos botões
+if (slides.length > 0) {
+    atualizarBotoes();
+}
