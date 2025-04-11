@@ -38,6 +38,25 @@ function verificaLargura(){
 }
 
 
+const banner = document.getElementById("banner");
+
+const observarBanner = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+            banner.style.opacity = 1;
+            banner.style.transform = "translateY(0)";
+        } else {
+            banner.style.opacity = 0;
+            banner.style.transform = "translateY(50px)";
+        }
+    });
+});
+
+if (banner) {
+    observarBanner.observe(banner);
+}
+
+
 const empresa = document.getElementById("empresa");
 
 const observarEmpresa = new IntersectionObserver((entradas) => {
@@ -136,6 +155,9 @@ function irParaSlide(indice) {
 }
 
 function proximoSlide() {
+
+    console.log(carrossel.style.overflowY);
+
     console.log(indiceAtual, slides.length - 1);
     if(indiceAtual < slides.length){
         irParaSlide(indiceAtual+1);
@@ -145,6 +167,7 @@ function proximoSlide() {
 }
 
 function slideAnterior() {
+
     console.log(indiceAtual, slides.length - 1);
     if(indiceAtual < slides.length){
         irParaSlide(indiceAtual-1);
@@ -176,3 +199,13 @@ window.addEventListener('load', () => {
 if (slides.length > 0) {
     atualizarBotoes();
 }
+
+
+function carrosselMobile(){
+    
+
+    console.log(carrossel.style.overflowY);
+}
+
+
+carrossel.addEventListener('touchmove', carrosselMobile);
